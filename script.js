@@ -139,61 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       HERO MOUSE EFFECT
+       HERO MOUSE EFFECT — DISABLED
+       (elemen tidak bergerak saat cursor digerakkan)
     ========================================= */
 
-    const heroImage =
-        document.querySelector(".hero-image");
+    // Mouse parallax dihapus supaya elemen tidak bergerak
 
-
-    if (
-        heroImage &&
-        window.innerWidth > 900
-    ) {
-
-        const profileCard =
-            heroImage.querySelector(".profile-card");
-
-
-        heroImage.addEventListener(
-            "mousemove",
-            (event) => {
-
-                if (!profileCard) return;
-
-                const rect =
-                    heroImage.getBoundingClientRect();
-
-                const x =
-                    (event.clientX - rect.left)
-                    / rect.width - 0.5;
-
-                const y =
-                    (event.clientY - rect.top)
-                    / rect.height - 0.5;
-
-
-                profileCard.style.transform =
-                    `rotate(2deg)
-                     translate(${x * 8}px, ${y * 8}px)`;
-
-            }
-        );
-
-
-        heroImage.addEventListener(
-            "mouseleave",
-            () => {
-
-                if (!profileCard) return;
-
-                profileCard.style.transform =
-                    "rotate(2deg)";
-
-            }
-        );
-
-    }
  /* =========================================
    PHOTO SLIDER - FADE
 ========================================= */

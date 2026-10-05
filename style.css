@@ -4378,5 +4378,218 @@ body.portfolio-loaded .hero-stat {
 .profile-photo.slider .slide.active {
     opacity: 1;
     z-index: 2;
+}
 
+
+/* =========================
+   FIX PAGE HORIZONTAL OVERFLOW
+========================= */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+header,
+footer,
+section {
+    max-width: 100%;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE — HP
+========================= */
+
+@media (max-width: 480px) {
+
+    /* Floating cards — nonaktifkan animasi float agar tidak goyang */
+    .floating-card {
+        animation: none !important;
+        position: static;
+        margin: 8px 0;
+        width: fit-content;
+    }
+
+    /* Hero image — tata ulang di mobile */
+    .hero-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        min-height: auto;
+        padding: 20px 0 10px;
+    }
+
+    /* Sembunyikan circles di HP kecil agar tidak overflow */
+    .circle-one,
+    .circle-two {
+        display: none;
+    }
+
+    /* Profile card — lebar penuh */
+    .profile-card {
+        width: min(260px, 80vw);
+        transform: none !important;
+        position: static;
+    }
+
+    .profile-card:hover {
+        transform: none !important;
+    }
+
+    /* Floating cards row di bawah foto */
+    .code-card,
+    .location-card {
+        position: static;
+        animation: none !important;
+    }
+
+    .hero-image {
+        flex-direction: column;
+    }
+
+    /* Project — 1 kolom penuh di HP */
+    .project {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 30px 0;
+    }
+
+    .project-number {
+        display: none;
+    }
+
+    .project-preview {
+        grid-column: 1;
+        height: 180px;
+    }
+
+    .project-detail h3 {
+        font-size: 22px;
+    }
+
+    /* Section heading lebih kecil */
+    .section-heading h2 {
+        font-size: clamp(34px, 10vw, 50px);
+    }
+
+    /* Hero title */
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 60px);
+    }
+
+    /* Education card — stack vertikal */
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .education-card h2 {
+        font-size: 26px;
+    }
+
+    .education-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    /* Contact h2 */
+    .contact h2 {
+        font-size: clamp(38px, 12vw, 55px);
+        letter-spacing: -1px;
+    }
+
+    /* Email link */
+    .email {
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    /* Footer stack */
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px 5vw;
+    }
+
+    /* Skill cards — 1 kolom */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline single column */
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    /* About grid — stack */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Hero stat — smaller gap */
+    .hero-stat {
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 35px;
+    }
+}
+
+
+/* =========================
+   TABLET 481-768px
+========================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Floating cards — kurangi animasi */
+    .floating-card {
+        animation: none !important;
+    }
+
+    .code-card {
+        right: 0;
+        top: 15%;
+    }
+
+    .location-card {
+        left: 0;
+        bottom: 10%;
+    }
+
+    /* Profile card — tidak terlalu besar */
+    .profile-card {
+        width: min(300px, 75vw);
+        transform: rotate(2deg);
+    }
+
+    .profile-card:hover {
+        transform: rotate(0deg) translateY(-6px) !important;
+    }
+
+    /* Project list single column */
+    .project {
+        grid-template-columns: 40px 1fr;
+        gap: 12px;
+    }
+
+    .project-preview {
+        grid-column: 2;
+        height: 200px;
+    }
 }
